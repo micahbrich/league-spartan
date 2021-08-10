@@ -12,3 +12,10 @@ jobs:
         uses: docker://siletypesetter/fontproof:latest
         with:
           args: proofs.sil
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: proofs
+          path: proofs.pdf
+      - name: Download all workflow run artifacts
+        uses: actions/download-artifact@v2
