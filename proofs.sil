@@ -1,23 +1,57 @@
-\setTestFont[family="League Spartan", size=13pt]
-\begin[class=book,papersize=129mm x 198mm]{document}
-\proof{This is basic proof text using the test font}
+\begin[class=fontproof]{document}
+\setTestFont[family="Gentium Plus"]
+% Full test file for the fontproof package for SILE
 
-\proof[family="Test Proofing System",heading=A basic family test]{This is basic text with a font defined by family}
+\section{Main section head}
 
-\proof[size="10pt",filename="packages/fontproofsupport/Lato2OFL/Lato-Light.ttf",heading=A basic filename test]{This is another basic text with common parameters}
+Text under main section head
 
-\proof[size="10pt,11pt,12pt,16pt"]{This is basic proof text in a range of sizes}
+\subsection{Subsection head}
 
-\proof[size="10,11,12,13,20"]{This is basic proof text in a range of sizes with numbers only}
+Text under subsection head
 
-\proof[features="Ligatures=Rare, Ligatures=Discretionary"]{This is a proof with rare ligatures turned on}
+\section{Example proof texts}
 
-\proof[features="+dlig,+hlig"]{This is a proof with features manipulated manually}
+\proof{This is basic proof text using the test font and with no heading}
 
-\proof[language="grk",direction = "rtl"]{Here are some options which are passed on to the font command}
+%\proof[size="10pt",filename="packages/fontproofsupport/Lato2OFL/Lato-Light.ttf",heading=A basic test]{This is another basic text with common parameters}
 
-\proof[color="green"]{Here are some options which are passed on to the color command}
+\proof[size="10pt,11pt,12pt,16pt",heading=A simple waterfall]{This is basic proof text in a range of sizes}
 
-\proof[shapers="ot,fallback"]{Here we pass a list of subshapers to Harfbuzz}
+\proof[size="10,11,12,16",heading=Another simple waterfall]{This is basic proof text in a range of sizes defined with numbers only}
+
+\proof[size="18,24,30,36",heading=Using a built-in text]{text_az}
+
+\section{Example pattern texts}
+
+\pattern[chars="@",reps="abcd",heading=A simple hobonop]{h@o@b@o@n@o@p}
+\pattern[chars="i",reps="abcd",format="list",heading=Using a built-in frame]{text_pangram}
+
+\pattern[chars="@,#",reps="abc,xy",heading=A default pattern]{oo@#oo}
+\pattern[chars="@,#",reps="abc,xy",format="table",heading=A pattern with explicit table format]{oo@#oo}
+\pattern[chars="@,#",reps="abc,xy",format="list",heading=A pattern with explicit list format]{oo@#oo}
+\pattern[chars="@,#",reps="abc,xy",format="para",heading=A pattern with explicit para format]{oo@#oo}
+
+\patterngroup[name="vowels"]{aeiou}
+\pattern[chars="@,#",reps="group_vowels,xy",format="table",heading=A pattern using a group]{oo@#oo}
+\pattern[chars="@,#",reps="group_09,0123456789",format="table",heading=A pattern using one of the predefined groups]{00@#00}
+
+\section{Other tests}
+
+Adhesion: \adhesion[characters=adhesion]
+
+\bigskip
+
+Here are some digits of pi: \pi[digits=500]
+
+%\setTestFont[family="League Spartan"]
+%\proof[features = "Ligatures=Discretionary, Ligatures=Historic",language = "grk",direction = "rtl",shapers = "ot", color="green"]{This Turns on Historical Features}
+%\setTestFont[family="League Spartan"]
+
+\section{Built-in SILE commands}
+
+\pangrams
+\lorem[words=100]
+\repertoire
 
 \end{document}
