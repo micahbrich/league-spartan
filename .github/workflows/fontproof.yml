@@ -1,0 +1,14 @@
+name: FontProof
+on: [push, pull_request]
+jobs:
+  fontproof:
+    runs-on: ubuntu-latest
+    name: FontProof
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: FontProof
+        id: fontproof
+        uses: docker://siletypesetter/fontproof:latest
+        with:
+          args: proofs.sil
