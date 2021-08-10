@@ -1,0 +1,23 @@
+\setTestFont[family="League Spartan", size=13pt]
+\begin[class=book,papersize=129mm x 198mm]{document}
+\proof{This is basic proof text using the test font}
+
+\proof[family="Test Proofing System",heading=A basic family test]{This is basic text with a font defined by family}
+
+\proof[size="10pt",filename="packages/fontproofsupport/Lato2OFL/Lato-Light.ttf",heading=A basic filename test]{This is another basic text with common parameters}
+
+\proof[size="10pt,11pt,12pt,16pt"]{This is basic proof text in a range of sizes}
+
+\proof[size="10,11,12,13,20"]{This is basic proof text in a range of sizes with numbers only}
+
+\proof[features="Ligatures=Rare, Ligatures=Discretionary"]{This is a proof with rare ligatures turned on}
+
+\proof[features="+dlig,+hlig"]{This is a proof with features manipulated manually}
+
+\proof[language="grk",direction = "rtl"]{Here are some options which are passed on to the font command}
+
+\proof[color="green"]{Here are some options which are passed on to the color command}
+
+\proof[shapers="ot,fallback"]{Here we pass a list of subshapers to Harfbuzz}
+
+\end{document}
